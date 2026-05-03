@@ -41,8 +41,8 @@ function IncidentDetail() {
 
   return (
     <div className="max-w-2xl mx-auto py-10">
-      <h2 className="text-2xl font-bold mb-4">Incident #{incident.id}</h2>
-      <div className="bg-white rounded shadow p-6 mb-6">
+      <h2 className="text-2xl font-bold mb-4 dark:text-gray-100">Incident #{incident.id}</h2>
+      <div className="bg-white dark:bg-gray-800 dark:text-gray-200 rounded shadow p-6 mb-6">
         <div className="mb-2"><b>Title:</b> {incident.title}</div>
         <div className="mb-2"><b>Source:</b> {incident.source}</div>
         <div className="mb-2"><b>Priority:</b> {incident.priority}</div>
@@ -51,8 +51,8 @@ function IncidentDetail() {
         <div className="mb-2"><b>Updated:</b> {new Date(incident.updated_at).toLocaleString()}</div>
       </div>
       <div className="mb-6">
-        <h3 className="font-semibold mb-2">Signals</h3>
-        <ul className="bg-gray-50 rounded p-4">
+        <h3 className="font-semibold mb-2 dark:text-gray-100">Signals</h3>
+        <ul className="bg-gray-50 dark:bg-gray-800 dark:text-gray-200 rounded p-4">
           {incident.signals && incident.signals.map(sig => (
             <li key={sig.id} className="mb-2 border-b pb-2">
               <b>{sig.type}</b> [{sig.timestamp}]: {sig.message}
@@ -61,9 +61,9 @@ function IncidentDetail() {
         </ul>
       </div>
       <div className="mb-6">
-        <h3 className="font-semibold mb-2">RCA</h3>
+        <h3 className="font-semibold mb-2 dark:text-gray-100">RCA</h3>
         <textarea
-          className="w-full border rounded p-2"
+          className="w-full border dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded p-2"
           rows={3}
           value={rca}
           onChange={e => setRca(e.target.value)}
@@ -71,11 +71,11 @@ function IncidentDetail() {
         <button className="mt-2 px-4 py-1 bg-blue-500 text-white rounded" onClick={submitRca}>Save RCA</button>
       </div>
       <div className="mb-6">
-        <h3 className="font-semibold mb-2">Update Status</h3>
+        <h3 className="font-semibold mb-2 dark:text-gray-100">Update Status</h3>
         {["OPEN", "IN_PROGRESS", "RESOLVED", "CLOSED"].map(s => (
           <button
             key={s}
-            className={`mr-2 px-3 py-1 rounded ${status === s ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
+            className={`mr-2 px-3 py-1 rounded ${status === s ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200'}`}
             onClick={() => updateStatus(s)}
           >
             {s}

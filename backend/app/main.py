@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 from app.routes import signals, incidents
 
-app = FastAPI(title="Incident Management System (IMS)")
+app = FastAPI(title="PulseSync")
 
 # CORS
 app.add_middleware(
@@ -31,7 +31,7 @@ app.include_router(incidents.router, prefix="/incidents", tags=["Incidents"])
 
 @app.get("/")
 def root():
-    return {"message": "IMS Backend Running"}
+    return {"message": "PulseSync Backend Running"}
 
 @app.get("/health")
 def health_check():

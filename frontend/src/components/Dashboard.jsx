@@ -141,7 +141,7 @@ const refreshData = () => {
         )}
       </div>
       
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <Link 
             to="/incidents" 
@@ -153,7 +153,7 @@ const refreshData = () => {
             </svg>
           </Link>
           
-          <div className="flex items-center space-x-2 text-sm text-gray-600">
+          <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             <span>Total: <strong>{Object.values(counts).reduce((a, b) => a + b, 0)}</strong> incidents</span>
           </div>

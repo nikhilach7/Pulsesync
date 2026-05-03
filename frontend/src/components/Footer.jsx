@@ -12,10 +12,10 @@ function Footer() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">I</span>
               </div>
-              <span className="text-xl font-bold">IMS</span>
+              <span className="text-xl font-bold">PulseSync</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Incident Management System - A comprehensive platform for monitoring, managing, and resolving system incidents in real-time.
+              PulseSync - A comprehensive platform for monitoring, managing, and resolving system incidents in real-time.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -90,7 +90,7 @@ function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-gray-400">
-              © {new Date().getFullYear()} IMS. All rights reserved.
+              © {new Date().getFullYear()} PulseSync. All rights reserved.
             </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">

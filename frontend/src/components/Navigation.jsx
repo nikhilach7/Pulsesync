@@ -14,9 +14,9 @@ function Navigation() {
   };
 
   const navItems = [
-    { path: '/', label: 'Dashboard', icon: '📊' },
-    { path: '/incidents', label: 'Incidents', icon: '🚨' },
-    { path: '/about', label: 'About', icon: 'ℹ️' },
+    { path: '/', label: 'Dashboard' },
+    { path: '/incidents', label: 'Incidents' },
+    { path: '/about', label: 'About' },
   ];
 
   return (
@@ -29,8 +29,7 @@ function Navigation() {
                 <span className="text-white font-bold text-lg">I</span>
               </div>
               <div>
-                <span className="text-xl font-bold text-gray-800 dark:text-gray-100">IMS</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400 ml-2 hidden sm:inline">Incident Management System</span>
+                <span className="text-xl font-bold text-gray-800 dark:text-gray-100">PulseSync</span>
               </div>
             </Link>
           </div>
@@ -41,17 +40,16 @@ function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-                  isActive(item.path)
+                className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${isActive(item.path)
                     ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>
               </Link>
             ))}
-            
+
             <div className="flex items-center space-x-3 ml-8 pl-8 border-l border-gray-200 dark:border-gray-600">
               <ThemeToggle />
               <BackendStatus />
@@ -97,11 +95,10 @@ function Navigation() {
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
-                  isActive(item.path)
+                className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${isActive(item.path)
                     ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30'
                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-700'
-                }`}
+                  }`}
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>

@@ -1,4 +1,4 @@
-# Incident Management System (IMS)
+# PulseSync
 
 A production-ready, dockerized Incident Management System for high-throughput signal ingestion, debouncing, and incident lifecycle management. Includes a modern React + TailwindCSS frontend and robust backend with PostgreSQL, Redis, and RabbitMQ.
 
@@ -52,14 +52,12 @@ See backend OpenAPI docs at `/docs` when running.
 
 ---
 
-## Authentication (Required for All Features)
+## Authentication
 
-- The backend protects all endpoints (including signal ingestion) with HTTP Basic authentication.
-- The frontend now requires you to log in with your credentials (default: `admin` / `adminpass`).
-- You must log in via the modal on the dashboard before using any features (including sending signals).
-- Credentials are stored in your browser for the session.
-
-**If you see errors like 'Error sending signals' or empty dashboards, make sure you are logged in!**
+- The platform includes a demonstration login flow to showcase the UI state management.
+- Simply click "Login" with the pre-filled credentials to access the dashboard.
+- For production deployment, a robust JWT or OAuth2 authentication system should be implemented.
+- The backend API endpoints are currently open for local development testing.
 
 ---
 
@@ -86,12 +84,3 @@ See backend OpenAPI docs at `/docs` when running.
 - Structured logging
 - Prometheus metrics endpoint
 
----
-
-## PDF Submission
-See `submission.pdf` content in project root.
-
----
-
-## License
-MIT

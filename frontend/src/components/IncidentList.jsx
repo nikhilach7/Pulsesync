@@ -32,18 +32,18 @@ function IncidentList() {
   return (
     <div className="max-w-6xl mx-auto py-8 px-4">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-800 mb-2">Incidents</h1>
-        <p className="text-gray-600">View and manage all system incidents</p>
+        <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">Incidents</h1>
+        <p className="text-gray-600 dark:text-gray-400">View and manage all system incidents</p>
       </div>
       
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
           <div className="flex items-center space-x-2">
-            <label className="text-sm font-medium text-gray-700">Filter by status:</label>
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Filter by status:</label>
             <select 
               value={filter} 
               onChange={e => setFilter(e.target.value)} 
-              className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="border bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Status</option>
               <option value="OPEN">Open</option>
@@ -53,7 +53,7 @@ function IncidentList() {
             </select>
           </div>
           
-          <div className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600 dark:text-gray-300">
             Showing <strong>{filtered.length}</strong> of <strong>{incidents.length}</strong> incidents
           </div>
         </div>
@@ -70,26 +70,26 @@ function IncidentList() {
             <table className="min-w-full">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">ID</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Title</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Source</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Priority</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Status</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Created</th>
-                  <th className="text-left py-3 px-4 font-semibold text-gray-700 text-sm">Actions</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">ID</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Title</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Source</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Priority</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Status</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Created</th>
+                  <th className="text-left py-3 px-4 font-semibold text-gray-700 dark:text-gray-300 text-sm">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {filtered.map((inc, index) => (
                   <tr 
                     key={inc.id} 
-                    className={`border-b border-gray-100 hover:bg-gray-50 transition-colors ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50/30'}`}
+                    className={`border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors ${index % 2 === 0 ? 'bg-white dark:bg-gray-800' : 'bg-gray-50/30 dark:bg-gray-800/50'}`}
                   >
                     <td className="py-3 px-4">
-                      <span className="font-mono text-sm text-gray-600">#{inc.id}</span>
+                      <span className="font-mono text-sm text-gray-600 dark:text-gray-400">#{inc.id}</span>
                     </td>
                     <td className="py-3 px-4">
-                      <div className="font-medium text-gray-900">{inc.title}</div>
+                      <div className="font-medium text-gray-900 dark:text-gray-100">{inc.title}</div>
                     </td>
                     <td className="py-3 px-4">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
@@ -116,10 +116,10 @@ function IncidentList() {
                       </span>
                     </td>
                     <td className="py-3 px-4">
-                      <div className="text-sm text-gray-600">
+                      <div className="text-sm text-gray-600 dark:text-gray-400">
                         {new Date(inc.created_at).toLocaleDateString()}
                       </div>
-                      <div className="text-xs text-gray-500">
+                      <div className="text-xs text-gray-500 dark:text-gray-500">
                         {new Date(inc.created_at).toLocaleTimeString()}
                       </div>
                     </td>

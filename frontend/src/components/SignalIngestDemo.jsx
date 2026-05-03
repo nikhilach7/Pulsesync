@@ -72,22 +72,22 @@ try {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
+    <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-8">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-xl font-semibold text-gray-800">📡 Signal Ingest</h3>
+        <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">📡 Signal Ingest</h3>
         <div className="flex items-center space-x-2">
           <div className={`w-2 h-2 rounded-full ${loading ? 'bg-yellow-500 animate-pulse' : 'bg-green-500'}`}></div>
-          <span className="text-sm text-gray-600">{loading ? 'Processing...' : 'Ready'}</span>
+          <span className="text-sm text-gray-600 dark:text-gray-300">{loading ? 'Processing...' : 'Ready'}</span>
         </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Source</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Source</label>
           <select 
             value={source} 
             onChange={e => setSource(e.target.value)} 
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={loading}
           >
             <option value="DB">Database (DB)</option>
@@ -97,11 +97,11 @@ try {
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Type</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Type</label>
           <select 
             value={type} 
             onChange={e => setType(e.target.value)} 
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={loading}
           >
             <option value="ERROR">Error</option>
@@ -111,26 +111,26 @@ try {
         </div>
         
         <div className="md:col-span-2">
-          <label className="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message *</label>
           <input 
             value={message} 
             onChange={e => setMessage(e.target.value)} 
             onKeyPress={handleKeyPress}
             placeholder="Enter signal message..." 
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={loading}
           />
         </div>
         
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Count</label>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Count</label>
           <input 
             type="number" 
             min={1} 
             max={1000} 
             value={count} 
             onChange={e => setCount(Number(e.target.value))} 
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full bg-white dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             disabled={loading}
           />
         </div>
