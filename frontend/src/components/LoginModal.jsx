@@ -10,20 +10,10 @@ function LoginModal() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // Try a dummy request to check credentials
-    try {
-      const res = await fetch('/incidents', {
-        headers: {
-          'Authorization': 'Basic ' + btoa(username + ':' + password)
-        }
-      });
-      if (res.status === 401) throw new Error('Invalid credentials');
-      login(username, password);
-      setShow(false);
-      setError('');
-    } catch (err) {
-      setError('Invalid credentials');
-    }
+    // Bypass dummy authentication since backend doesn't enforce it yet
+    login(username, password);
+    setShow(false);
+    setError('');
   };
 
   if (isLoggedIn && !show) return null;

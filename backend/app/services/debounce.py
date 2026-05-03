@@ -27,13 +27,13 @@ async def debounce_signal(signal, db):
     db.add(inc)
     db.commit()
     db.refresh(inc)
-    await redis.set(key, inc.id, expire=DEBOUNCE_WINDOW)
+    await redis.set(key, inc.id, ex=DEBOUNCE_WINDOW)
     await redis.close()
     return inc.id
 
 def priority_from_source(source):
     if source == "DB":
-        return "P0"
+        return "HIGH"
     if source == "API":
-        return "P1"
-    return "P2"
+        return "MEDIUM"
+    return "LOW"
