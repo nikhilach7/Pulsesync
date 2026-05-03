@@ -46,12 +46,7 @@ PulseSync is a production-ready, highly-scalable Incident Management System (IMS
 
 ---
 
-## Authentication
 
-*   **Development UI:** The frontend includes a demonstration login flow to showcase the UI state management. Click "Login" with the pre-filled credentials to access the system.
-*   **Production API:** For production deployments, a robust JWT (JSON Web Token) or OAuth2 layer should be integrated into FastAPI's dependency injection system. The current endpoints are open to facilitate seamless local testing.
-
----
 
 ## Development & Tooling
 
@@ -85,4 +80,3 @@ To take this application to production scale:
 4.  **Connection Pooling:** Utilize PgBouncer in front of PostgreSQL to manage thousands of concurrent DB connections efficiently.
 
 ---
-

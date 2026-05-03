@@ -26,7 +26,9 @@ function Navigation() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-soft">
-                <span className="text-white font-bold text-lg">I</span>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6">
+                  <path d="M3 12h4l2-7 4 14 2-7h4" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
               <div>
                 <span className="text-xl font-bold text-gray-800 dark:text-gray-100">PulseSync</span>
