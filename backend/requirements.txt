@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+SQLAlchemy
+asyncpg
+pydantic
+alembic
+psycopg2-binary
+redis
+pika
+python-jose

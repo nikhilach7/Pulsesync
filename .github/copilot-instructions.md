@@ -1,0 +1,8 @@
+- [x] Project scaffolded with backend, frontend, docker-compose, and README.md
+- [x] Backend and frontend Dockerfiles created
+- [x] PostgreSQL, Redis, RabbitMQ services defined
+- [x] Backend: FastAPI, SQLAlchemy, Alembic, async ingestion, debouncing, incident management, authentication, logging, metrics
+- [x] Frontend: React, TailwindCSS, dashboard, incident list/detail, RCA, status update, signal ingest demo
+- [x] Submission PDF content generated
+- [x] All code and infra files present
+- [x] Ready for `docker-compose up --build`

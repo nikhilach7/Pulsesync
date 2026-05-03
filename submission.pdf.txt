@@ -1,0 +1,62 @@
+Full Name - Infrastructure / SRE Intern Assignment
+
+---
+
+## Problem Statement Summary
+Design and implement a production-ready Incident Management System (IMS) capable of high-throughput signal ingestion, debouncing, incident lifecycle management, and a modern UI. The system must be dockerized, resilient, and easy to run locally.
+
+---
+
+## Architecture Diagram (ASCII)
+
++-------------------+      +-------------------+      +-------------------+
+|  React Frontend   |<---> |   FastAPI Backend |<---> |   PostgreSQL DB   |
+|  (TailwindCSS)    |      |  (Async, REST)    |      |   (Incidents,     |
+|                   |      |                   |      |    Signals, RCA)  |
++-------------------+      +-------------------+      +-------------------+
+         |                        |   ^
+         v                        |   |
++-------------------+      +-------------------+
+|     Redis         |<---->|   Debounce Logic  |
+| (Debounce Cache)  |      +-------------------+
++-------------------+              |
+         |                        v
++-------------------+      +-------------------+
+|   RabbitMQ        |<---->|  Worker (Async)   |
+| (Queue)           |      +-------------------+
++-------------------+
+
+---
+
+## System Design Explanation
+- **Signal Ingestion:** High-throughput, async API (FastAPI) accepts batched signals, queues for processing.
+- **Debouncing:** Redis caches recent signals by source, groups within 10s window to a single incident.
+- **Incident Management:** PostgreSQL stores incidents, signals, RCA. Status lifecycle enforced.
+- **Async Processing:** RabbitMQ decouples ingestion from processing. Worker handles background jobs.
+- **Frontend:** React + TailwindCSS dashboard, list, detail, RCA input, status updates.
+- **Dockerized:** All services orchestrated via docker-compose for local development.
+
+---
+
+## Key Features
+- **Debouncing:** Prevents duplicate incidents, groups signals by source/time window.
+- **Scalability:** Async queue, stateless backend, horizontal scaling possible.
+- **Fault Tolerance:** Retries, non-blocking ingestion, resilient to DB/queue slowness.
+
+---
+
+## Tech Stack
+- FastAPI, SQLAlchemy, PostgreSQL, Redis, RabbitMQ, React, TailwindCSS, Docker
+
+---
+
+## How to Run Project
+1. Clone repo
+2. Run: `docker-compose up --build`
+3. Backend: http://localhost:8000/docs
+4. Frontend: http://localhost:3000
+
+---
+
+## GitHub Repo
+https://github.com/your-username/ims (replace with actual)
