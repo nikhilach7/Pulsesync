@@ -8,14 +8,12 @@ import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import { AuthProvider } from './auth/AuthContext';
 import { ThemeProvider } from './contexts/ThemeContext';
-import LoginModal from './components/LoginModal';
 
 function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
         <Router>
-          <LoginModal />
           <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200 flex flex-col">
             <Navigation />
             <main className="flex-grow">
